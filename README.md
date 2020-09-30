@@ -165,7 +165,11 @@ ORDER BY c.company_name
   </details>
 
 ```SQL
-
+SELECT COUNT( c.contact_name ), c.contact_name
+FROM customers c JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.contact_name
+ORDER BY COUNT DESC
 ```
 
 * [ ] ***list orders grouped by customer's city showing the number of orders per city. Returns 69 Records with _Aachen_ showing 6 orders and _Albuquerque_ showing 18 orders***
