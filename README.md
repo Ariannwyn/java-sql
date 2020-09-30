@@ -180,7 +180,11 @@ ORDER BY COUNT DESC
   </details>
 
 ```SQL
-
+SELECT c.city, COUNT(o.order_id)
+FROM customers c JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.city
+ORDER BY c.city
 ```
 
 ## Data Normalization
